@@ -1,0 +1,213 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.header-wrapper{
+    width: 100%;
+    min-height:100vh ;
+    padding: 0 8%;
+    overflow: hidden;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.navbar-logo{ /* imagem logo esquerda*/
+    width: 50px;
+    cursor: pointer;
+    margin: 30px;
+}
+.navbar-menu_icon{ /* imagem logo direita*/
+    width: 25px;
+    cursor: pointer;
+    display: none;
+
+}
+nav.menu{
+    opacity: 1;
+    flex: 1;
+    text-align: right;
+  
+}
+ul.menu-ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+ul.menu-ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+}
+ul.menu-ul li a:hover{
+    color: #ff5e2a;
+    transition: .1s;
+}
+
+/* FIM MENU ============================================================ */
+/* INICIO LADO ESQUERDO ================================================ */
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+.col-1{
+    flex-basis: 40%; /* tamando inicial do flex item */
+    position: relative; /* para o banner ter uma posiçaõ absoluta */
+    margin-left: 50px;
+}
+.col-1 h2{
+
+    font-size: 2.5rem;
+}
+.col-1 h3{
+    font-size: 2rem;
+    color: #707070;
+    font-weight: 100;
+
+    margin: 1.3rem 0rem .7rem;
+}
+.col-1 p{
+    font-size: 1.3rem;
+    color: #b7b7b7;
+    font-weight: 100;
+}
+.col-1 h4{
+    margin:  30px 0;
+    font-size: 20px;
+}
+button{
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #fb5283, #ff3527 );
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+button img{
+    width: 30px;
+    display: none;
+}
+button:hover img{
+    display: block;
+}
+button:hover{   /* animação do botao crescendo */
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.col-1::after{  /* after cria um elemnto "depois"  do elemnto escolhido*/
+    content: '';
+    width: 10px;
+    height: 57%;
+    background:linear-gradient(#ff3527,#ff3527);
+    position: absolute;
+    left: -40px;
+    top: 10px;
+}
+/* INICIO LADO DIREITO ========================================================= */
+.col-2{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+    
+}  
+.col-2 .controller{
+    width: 80%; 
+    margin-right: 10rem;
+
+      
+} 
+.color-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(#fb54a2,#ff575a);
+    border-radius: 20px 20px;
+    height: 100%;
+    width: 80%;
+    z-index: -1;
+    transform: translateX(150px);
+}
+
+.add-btn img{
+    width: 35px;
+    margin-bottom: 5px;
+  
+}
+.add-btn{
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    margin-left: 4rem;
+}
+.add-btn p{
+    font-size: .8rem;
+}
+
+/* RESPONSIVO ====================================== */
+@media only screen and (max-width:770px){
+    
+    ul.menu-ul{
+        width: 100%;
+        background: linear-gradient(rgb(255, 84, 162),rgb(221, 87, 90));
+        position: absolute;
+        top: -200px;
+        right: 0;
+        z-index: 2;
+        transition: .5s;
+    }
+    ul.menu-ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .navbar-menu_icon{
+    display: block;
+    
+    }
+    .content{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+    }
+    .col-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-2 .controller{
+        width: 77%;
+    }
+    .col-2 .color-box{
+        transform: translateX(100px);
+    }
+    .col-1{
+        flex-basis: 100%;
+    }
+    .col-1 h2{
+        font-size: 35px;
+        
+    }
+    .col-1 h3{
+        font-size: 15px;
+        
+    }
+    /* main{
+        width: 95%;
+        margin: 0 auto;
+    }
+ */
+}
