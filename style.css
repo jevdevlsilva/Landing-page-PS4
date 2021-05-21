@@ -32,6 +32,9 @@ nav.menu{
     text-align: right;
   
 }
+.menu-ul{
+    height: 0px;
+}
 ul.menu-ul li{
     list-style: none;
     display: inline-block;
@@ -148,12 +151,15 @@ button:hover{   /* animação do botao crescendo */
     height: 100%;
     text-align: center;
     color: #fff;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content:center ;
     align-items: center;
     margin-left: 4rem;
+}
+.add-btn img, .add-btn p{
+    cursor: pointer;
+    z-index: -2;
 }
 .add-btn p{
     font-size: .8rem;
@@ -163,10 +169,12 @@ button:hover{   /* animação do botao crescendo */
 @media only screen and (max-width:770px){
     
     ul.menu-ul{
+        height: 0;
+        overflow: hidden;
         width: 100%;
         background: linear-gradient(rgb(255, 84, 162),rgb(221, 87, 90));
         position: absolute;
-        top: -200px;
+        top: 75px;
         right: 0;
         z-index: 2;
         transition: .5s;
@@ -176,13 +184,16 @@ button:hover{   /* animação do botao crescendo */
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    ul.menu-ul li a{
+        color: #fff;
+    }
     .navbar-menu_icon{
     display: block;
     
     }
     .content{
         flex-direction: column-reverse;
-        margin: 50px 0;
+        margin: 150px 0;
     }
     .col-2{
         flex-basis: 100%;
@@ -210,4 +221,9 @@ button:hover{   /* animação do botao crescendo */
         margin: 0 auto;
     }
  */
+}
+@media only screen and (max-width:770px){
+   #menu-js{
+        height: 0px;
+    }
 }
